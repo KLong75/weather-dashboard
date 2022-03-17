@@ -9,24 +9,24 @@
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
-  <header>
+  <header class="">
     <div class ="container container-fluid text-center header-box" id="title-box">
-      <h1>Weather Dashboard</h1>
+      <h1 class="text-white">Weather Dashboard</h1>
     </div>
   </header> 
   <main>
     <div class="container" id="page-box">
         <div class="row justify-content-start">
           <div class="col-sm-4 ">
-            <div>
-            <h2>Search for a city:</h2>
-              <form class="" id="city-search-form">
-                <input name="city-search" id="city-search" type="text" autofocus="true" class = "container-fluid form-input"/>
-                <button type="submit" class="btn btn-primary container-fluid " id="search-btn">Search</button>
-              </form>
+            <div class=" border-secondary" id="city-search-box">
+              <h2>Search for a city:</h2>
+                <form class="" id="city-search-form">
+                  <input name="city-search" id="city-search" type="text" autofocus="true" class = " rounded container-fluid form-input "/>
+                  <button type="submit" class="btn   container-fluid " id="search-btn">Search</button>
+                </form>
             </div>
-            <div >
-              Search History
+            <div id="search-history-box" >
+              Search History Will Go Here
             </div>
           </div>
           <div class="col-sm-8">
