@@ -25,13 +25,13 @@ var formSubmitHandler = function(event) {
 var searchCityWeather = function(city) {
   console.log(city);
 
-var apiUrl ="https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=523a8452a92059fd3b4bc789dcceccb3";
+var apiUrl ="https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=523a8452a92059fd3b4bc789dcceccb3&units=imperial";
 fetch(apiUrl)
       .then(function(response) {
         // request was succesful
         if (response.ok) {
-          console.log(response); 
           response.json().then(function(data) {
+            console.log(data);
           });
         } else {
         alert("Error");
