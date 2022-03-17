@@ -1,15 +1,34 @@
+header {
+    background-image: linear-gradient(to right, #4169E1 , #483D8b);
+}
+
 #page-box {
     padding: 20px;
     margin: 20px;
 }
 
-
 #city-search  {
-    padding-bottom: 2px;
+    padding-bottom: 10px;
+    padding-top: 10px;
     margin-bottom: 4px;
 }
 
 #search-btn  {
     padding-top: 4px;
-    margin-top: 4px;
+    padding-bottom: 4px;
+    margin-top: 10px;
+    margin-bottom: 10px; 
+}
+
+h2 {
+    font-weight: bold;
+}
+
+#city-search-box {
+    border-bottom: solid;
+}
+
+.btn {
+    background-color: #4169E1;
+    color: white;
 }
