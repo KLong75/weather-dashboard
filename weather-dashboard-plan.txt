@@ -1,0 +1,26 @@
+Weather Dashboard Plan
+
+- HTML 
+	- layout
+		- header
+		- main
+			- columns
+	- connect all necessary links
+		- js, css, api's
+- CSS
+	- bootstrap for layout
+	- add some color
+
+-JS
+	- capture user input for city
+	- usi API to collect forcast info on selected city
+	- dynamically display current weather in weather for searched city box(div)
+	- dynamically display 5 day forecast cards for searched city below current weather box
+
+- use local storage to save searched cities and create buttons for searched cities below search box on left of screen 
+
+
+
+As a movie goer 
+I want to search local movies by genre 
+so I can decide what to see.
