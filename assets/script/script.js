@@ -135,10 +135,26 @@ var displayCurrentWeather = function(cityName, currentTemp, currentWindSpeed, cu
       currentWeatherEl.appendChild(currentCityHumidity);
 
   var currentCityUvi = document.createElement("span");
-      currentCityUvi.id ="current-city-temp";
+      currentCityUvi.id ="current-city-uvi";
       currentCityUvi.className ="current-city-weather row col-sm-12";
       currentCityUvi.textContent = "UVI: " + currentUvi;
       currentWeatherEl.appendChild(currentCityUvi);
+      if (currentUvi <=2) {
+        var currentUviBadge = document.createElement("span");
+        currentUviBadge.className = "badge bg-success";
+        currentUviBadge.textContent = "favorable";
+        currentWeatherEl.appendChild(currentUviBadge);
+      } else if (currentUvi >=8) {
+        var currentUviBadge = document.createElement("span");
+        currentUviBadge.className = "badge bg-danger";
+        currentUviBadge.textContent = "severe";
+        currentWeatherEl.appendChild(currentUviBadge);  
+      } else {
+          var currentUviBadge = document.createElement("span");
+          currentUviBadge.className = "badge bg-warning";
+          currentUviBadge.textContent = "moderate";
+          currentWeatherEl.appendChild(currentUviBadge);
+      }
 
    
 }
