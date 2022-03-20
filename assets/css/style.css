@@ -20,8 +20,25 @@ header {
     margin-bottom: 10px; 
 }
 
+#history-one-btn {
+    padding-top: 4px;
+    padding-bottom: 4px;
+    margin-top: 10px;
+    margin-bottom: 10px; 
+}
+
 h2 {
     font-weight: bold;
+}
+
+#current-weather {
+    margin: 10px;
+    padding: 10px;
+}
+
+#future-forecast {
+    margin: 10px;
+    padding: 10px;
 }
 
 #city-search-box {
