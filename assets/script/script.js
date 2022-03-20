@@ -16,7 +16,6 @@ var formSubmitHandler = function(event) {
       fiveDayForecastEl.textContent = "";
       cityInputEl.value = "";
       displayForecastWeather();
-      createSearchHistoryButton();
     } else {
       alert ("Please enter the name of a city.")
     }
@@ -96,6 +95,8 @@ var searchCityForecast = function(city) {
 
 var displayCurrentWeather = function(cityName, currentTemp, currentWindSpeed, currentHumidity, currentWeatherIcon, currentUvi) {
 
+  createSearchHistoryButton(cityName);
+
   var currentDate = moment().format("dddd, MMMM Do YYYY");
     currentDate.class = "row col-sm-12"
     document.getElementById("current-weather").append(currentDate);
@@ -155,8 +156,6 @@ var displayCurrentWeather = function(cityName, currentTemp, currentWindSpeed, cu
           currentUviBadge.textContent = "moderate";
           currentWeatherEl.appendChild(currentUviBadge);
       }
-
-   
 }
 
 var displayForecastWeather = function() {
@@ -217,12 +216,12 @@ var displayForecastWeather = function() {
 
 }
 
-var createSearchHistoryButton = function() {
+var createSearchHistoryButton = function(cityName) {
   var searchedCityName = document.createElement("button");
-  searchedCityName.id="history-one-btn";
+  searchedCityName.id="history-btn";
   searchedCityName.type="submit";
   searchedCityName.class ="btn container-fluid";
-  searchedCityName.textContent = "city name";
+  searchedCityName.innerHTML = cityName;
   searchHistoryEl.appendChild(searchedCityName);
 };
 
