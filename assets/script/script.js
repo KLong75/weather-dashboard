@@ -197,7 +197,7 @@ var displayForecastWeather = function() {
 
 var createSearchHistoryButton = function() {
   var searchedCityName = document.createElement("button");
-  searchedCityName.id="search-btn";
+  searchedCityName.id="history-one-btn";
   searchedCityName.type="submit";
   searchedCityName.class ="btn container-fluid";
   searchedCityName.textContent = "city name";
