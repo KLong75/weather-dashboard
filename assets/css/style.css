@@ -19,12 +19,20 @@ header {
     margin-top: 10px;
     margin-bottom: 10px; 
 }
+ develop
+
+#history-btn {
+    padding: 8px;
+    margin: 10px;
+    justify-content: center;
+
  feature/display-current-weather
 #history-one-btn {
     padding-top: 4px;
     padding-bottom: 4px;
     margin-top: 10px;
     margin-bottom: 10px; 
+
 }
 
 
@@ -51,3 +59,5 @@ h2 {
     background-color: #4169E1;
     color: white;
 }
+
+
