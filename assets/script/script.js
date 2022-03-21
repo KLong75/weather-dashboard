@@ -4,7 +4,22 @@ var currentWeatherEl = document.querySelector("#current-weather");
 var fiveDayForecastEl = document.querySelector("#future-forecast");
 var cardHolderEl = document.querySelector("#card-holder");
 var searchHistoryEl = document.querySelector("#search-history-box");
+var searchHistoryFormEl = document.querySelector("#search-history-form")
 
+var clickEventHandler = function(event) {
+  event.preventDefault();
+  var city = localStorage.getItem("#searchedCityName");
+    if (city) {
+      currentWeatherEl.textContent = "";
+      fiveDayForecastEl.textContent = "";
+      cityInputEl.value = "";
+      searchCityWeather(city);
+      searchCityForecast(city);
+      
+    } else {
+      alert ("Please enter the name of a city.")
+    }
+};
 
 var formSubmitHandler = function(event) {
   event.preventDefault();
@@ -15,7 +30,7 @@ var formSubmitHandler = function(event) {
       currentWeatherEl.textContent = "";
       fiveDayForecastEl.textContent = "";
       cityInputEl.value = "";
-      displayForecastWeather();
+      
     } else {
       alert ("Please enter the name of a city.")
     }
@@ -55,6 +70,7 @@ var searchCityWeather = function(city) {
             var currentUvi = (data.current.uvi);
             console.log(currentUvi);
             displayCurrentWeather(cityName, currentTemp, currentWindSpeed, currentHumidity, currentWeatherIcon, currentUvi);
+            displayForecastWeather();
             })  
           } else {
             alert("Error - unable to connect");
@@ -160,12 +176,6 @@ var displayCurrentWeather = function(cityName, currentTemp, currentWindSpeed, cu
 
 var displayForecastWeather = function() {
 
-  /*var forecastCityName = document.createElement("h2");
-    forecastCityName.id="forecast-city-name";
-    forecastCityName.class ="forecast-city  row col-sm-12 ";
-    forecastCityName.textContent = "city name";
-    fiveDayForecastEl.appendChild(forecastCityName);*/
-
   var forecastCityTextFormat = document.createElement("span");
     forecastCityTextFormat.id ="five-day-forecast";
     forecastCityTextFormat.className ="five-day-forecast row col-sm-12";
@@ -202,30 +212,17 @@ var displayForecastWeather = function() {
     forecastDayFive.textContent = "Day Five";
     fiveDayForecastEl.appendChild(forecastDayFive);
 
- /* var currentCityWind = document.createElement("span");
-    currentCityWind.id="current-city-wind";
-    currentCityWind.class ="current-city-weather row col-sm-12";
-    currentCityWind.textContent = "Wind Speed: ";
-    currentWeatherEl.appendChild(currentCityWind);
-
-  var currentCityHumidity = document.createElement("span");
-      currentCityHumidity.id ="current-city-humidity";
-      currentCityHumidity.className ="current-city-weather row col-sm-12";
-      currentCityHumidity.textContent = "Humidity: ";
-      currentWeatherEl.appendChild(currentCityHumidity);*/
-
 }
 
 var createSearchHistoryButton = function(cityName) {
   var searchedCityName = document.createElement("button");
   searchedCityName.id="history-btn";
-  searchedCityName.type="submit";
+  searchedCityName.type="button";
   searchedCityName.class ="btn container-fluid";
   searchedCityName.innerHTML = cityName;
-  searchHistoryEl.appendChild(searchedCityName);
+  searchHistoryFormEl.appendChild(searchedCityName);
 };
 
 
-
-
 citySearchFormEl.addEventListener("submit", formSubmitHandler);
+searchHistoryEl.addEventListener("click", clickEventHandler);
